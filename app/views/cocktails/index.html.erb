@@ -3,24 +3,23 @@
     <h1>Cocktails</h1>
     <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-primary btn-lg" %>
   </div>
-</div></center>
+</div></center></
 <br>
-<center><div class="container">
+<center><div class="container" padding="19">
   <div class="row">
     <% @cocktails.each do |cocktail| %>
       <div class="col-12 col-md-6 col-lg-3">
         <div class="card">
           <div class="card-description">
-            <h2><%= cocktail.name %></h2>
+            <h2><%= link_to cocktail.name, cocktail_path(cocktail)%></h2>
           </div>
-          <%= link_to "details", cocktail_path(cocktail), class: 'card-link' %>               <td>
-                <%= link_to cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" } do %>
-                  <i class="fa fa-trash destroy_cocktail"></i>
-                <% end %>
-              </td>
+          <td>
+            <%= link_to cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" } do %>
+            <i class="fa fa-trash destroy_cocktail"></i>
+            <% end %>
+          </td>
         </div>
       </div>
     <% end %>
   </div>
 </div>
-</center>
