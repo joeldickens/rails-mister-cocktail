@@ -18,3 +18,5 @@ ingredients_array.each do |ingredient|
   ingredient_name = ingredient['strIngredient1']
   Ingredient.create(name: ingredient_name)
 end
+
+Ingredient.create(name: 'Write-in')
