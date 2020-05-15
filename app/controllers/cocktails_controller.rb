@@ -5,6 +5,7 @@ class CocktailsController < ApplicationController
 
   def show
     @cocktail = Cocktail.find(params[:id])
+    @dose = Dose.new
   end
 
   def new
@@ -13,30 +14,17 @@ class CocktailsController < ApplicationController
 
   def create
     @cocktail = Cocktail.new(cocktail_params)
-    @cocktail.save
-
-    # no need for app/views/restaurants/create.html.erb
-    redirect_to cocktail_path(@cocktail)
-  end
-
-  def edit
-    @cocktail = Cocktail.find(params[:id])
-  end
-
-  def update
-    @cocktail = Cocktail.find(params[:id])
-    @cocktail.update(cocktail_params)
-
-    # no need for app/views/restaurants/update.html.erb
-    redirect_to cocktail_path(@cocktail)
+    if @cocktail.save
+      redirect_to cocktail_path(@cocktail)
+    else
+      render 'new'
+    end
   end
 
   def destroy
     @cocktail = Cocktail.find(params[:id])
     @cocktail.destroy
-
-    # no need for app/views/restaurants/destroy.html.erb
-    redirect_to cocktail_path
+    redirect_to cocktails_path
   end
 
   private
@@ -44,5 +32,4 @@ class CocktailsController < ApplicationController
   def cocktail_params
     params.require(:cocktail).permit(:name)
   end
-
 end
