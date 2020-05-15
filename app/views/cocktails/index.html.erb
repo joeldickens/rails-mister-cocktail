@@ -10,7 +10,7 @@
   </div>
 </div></center>
 <br>
-<center><div class="container">
+<div class="container">
   <br>
   <div class="row">
     <% @cocktails.each do |cocktail| %>
@@ -19,8 +19,8 @@
           <img src="https://previews.123rf.com/images/iuliian/iuliian1710/iuliian171000233/89088811-cold-pink-cocktail-with-fresh-grapefruit-lime-and-ice-cubes-on-concrete-background-paloma-square-for.jpg" />
           <div class="card-product-infos">
             <h2><%= link_to cocktail.name, cocktail_path(cocktail)%></h2>
-            <%= link_to cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" } do %>
-            <i class="fa fa-trash destroy_cocktail"></i>
+            <p1><%= link_to cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" } do %>
+            <i class="fa fa-trash destroy_cocktail"></i></p1>
             <% end %>
           </div>
         </div>
