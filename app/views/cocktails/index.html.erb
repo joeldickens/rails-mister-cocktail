@@ -16,7 +16,6 @@
     <% @cocktails.each do |cocktail| %>
       <div class="col-12 col-md-6 col-lg-3">
         <div class="card-product">
-          <%= link_to cl_image_tag("ddffml5y2jryap0c0odc.jpg", :transformation => {:width=>500, :height=>500, :crop=>"fill"}), cocktail_path(cocktail) %>
           <div class="card-product-infos">
             <h2><%= link_to cocktail.name, cocktail_path(cocktail)%></h2>
             <p1><%= link_to cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" } do %>
