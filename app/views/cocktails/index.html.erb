@@ -16,6 +16,7 @@
     <% @cocktails.each do |cocktail| %>
       <div class="col-12 col-md-6 col-lg-3">
         <div class="card-product">
+                      <img src="https://farm6.staticflickr.com/5656/30213056653_ec0ba57b73_b.jpg">
           <div class="card-product-infos">
             <h2><%= link_to cocktail.name, cocktail_path(cocktail)%></h2>
             <p1><%= link_to cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" } do %>
