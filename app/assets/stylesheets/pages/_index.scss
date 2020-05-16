@@ -47,3 +47,18 @@ p1 {
 h2{
   text-align: center;
 }
+
+.banner {
+  padding: 10px;
+}
+
+.div-page {
+  padding: 20px;
+}
+
+
+.row {
+  display: flex;
+  justify-content: center;
+  flex-flow:row wrap;
+}
